@@ -1,5 +1,7 @@
 package ApiGroupProject.FoodApi;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,15 +15,32 @@ public class HomeController {
 	WineApiService wineApiService;
 
 	@RequestMapping("/testDishPairing")
-	public String showIndex(Model model) {
+	public String showIndexTest1(Model model) {
 
 		try {
-			DishPairingForWineResponse dishPerWine = wineApiService.getDishPairingForWineResponse("merlot");
-			model.addAttribute("dishPerWine", dishPerWine);
+			List<String> dishList = wineApiService.getDishPairingForWine("pinot_noir");
+			model.addAttribute("dishList", dishList);
 		
 		} catch (HttpClientErrorException e) {
-			System.out.println("API Call Error. Check console output");
-			model.addAttribute("msg", "API Error");
+			System.out.println("API Call Error.");
+			model.addAttribute("msg", "API Error. Check console output");
+			return "testPage";
+		}
+
+		return "testPage";
+	}
+	
+	
+	@RequestMapping("/testWinePairing")
+	public String showIndexTest2(Model model) {
+
+		try {
+			WinePairingResponse winePerDish = wineApiService.winePairingResponse("steak");
+			model.addAttribute("winePerDish", winePerDish);
+		
+		} catch (HttpClientErrorException e) {
+			System.out.println("API Call Error.");
+			model.addAttribute("msg", "API Error. Check console output");
 			return "testPage";
 		}
 

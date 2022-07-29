@@ -16,9 +16,19 @@
 ${ msg }
 </div>
 
-<c:forEach items="${ dishPerWine.pairings }" var="food">
-	${ food }
+<%-- test for DishPairings --%>
+Dish Pairing API Call Here (if active):<br>
+<c:forEach items="${ dishList }" var="food">
+	${ food }<br>
 </c:forEach>
+
+<%-- test for DishPairings --%>
+Wine Pairing API Call Here (if active):<br>
+Wines:<br>
+<c:forEach items="${ winePerDish.pairedWines }" var="wine">
+	${ wine }	<br>
+</c:forEach>
+Text: ${ winePerDish.pairingText }<br>
 
 </body>
 </html>
