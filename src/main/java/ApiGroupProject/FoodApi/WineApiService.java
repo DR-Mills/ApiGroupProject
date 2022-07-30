@@ -36,7 +36,23 @@ public class WineApiService {
 	}
 	
 	
+	public String wineDescription(String wine) {
+		
+		String url = "https://api.spoonacular.com/food/wine/description?apiKey={apiKey}&wine={wine}";
+		
+		WineDescriptionResponse response = restTemplate.getForObject(url, WineDescriptionResponse.class, apiKey, wine);
+		
+		return response.getWineDescription();
+	}
 	
 
+	public List<Wine> recommendedWineList(String wine) {
+		
+		String url = "https://api.spoonacular.com/food/wine/recommendation?apiKey={apiKey}&wine={wine}&number=10";
+
+		WineRecommendationResponse response = restTemplate.getForObject(url, WineRecommendationResponse.class, apiKey, wine);
+		
+		return response.getWineList();
+	}
 	
 }
