@@ -22,7 +22,7 @@ Dish Pairing API Call Here (if active):<br>
 	${ food }<br>
 </c:forEach>
 
-<%-- test for DishPairings --%>
+<%-- test for WinePairings --%>
 Wine Pairing API Call Here (if active):<br>
 Wines:<br>
 <c:forEach items="${ winePerDish.pairedWines }" var="wine">
