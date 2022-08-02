@@ -16,6 +16,9 @@ public class HomeController {
 
 	@Autowired
 	WineApiService wineApiService;
+	
+	@Autowired
+	private WineRepository repo;
 
 	@RequestMapping("/testDishPairing")
 	public String showIndexTest1(Model model) {
@@ -97,6 +100,29 @@ public class HomeController {
 		}
 
 		return "wineResults";
+	}
+	
+	@RequestMapping("/recommendations")
+	public String showRecommendations(Model model, @RequestParam String wine) {
+		
+		List<Wine> recommendList = wineApiService.recommendedWineList(wine);
+		model.addAttribute("recommendList", recommendList);
+		
+		return "recommendations";
+	}
+	
+	@RequestMapping("/saveToFavorites")
+	public String saveToFavorites(Model model, @RequestParam int id,
+			@RequestParam String title,
+			@RequestParam double averageRating, @RequestParam String description,
+			@RequestParam String price) {
+		
+		Wine newWine = new Wine(id, title, averageRating, description, price);
+		
+		
+		repo.save(newWine);
+		
+		return "index";//need to update this eventually
 	}
 
 	

@@ -14,16 +14,18 @@
 	</header>
 
 	<%-- Results for WinePairings --%>
-	Wine Pairing API Call Here (if active):
-	<br> Wines:
+
+	<br> Wines (click item to see recommendations):
 	<br><br>
+	
 	<c:forEach items="${ wineList.pairedWines }" var="wine">
-	${ wine }	
+	<a href="/recommendations?wine=${wine}">${ wine }</a>	
 		<br>
 	</c:forEach>
 	<br>
 	${ wineList.pairingText }
 	<br>
+	
 
 </body>
 </html>

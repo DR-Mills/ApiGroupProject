@@ -48,7 +48,7 @@ public class WineApiService {
 
 	public List<Wine> recommendedWineList(String wine) {
 		
-		String url = "https://api.spoonacular.com/food/wine/recommendation?apiKey={apiKey}&wine={wine}&number=10";
+		String url = "https://api.spoonacular.com/food/wine/recommendation?apiKey={apiKey}&wine={wine}&number=3";
 
 		WineRecommendationResponse response = restTemplate.getForObject(url, WineRecommendationResponse.class, apiKey, wine);
 		

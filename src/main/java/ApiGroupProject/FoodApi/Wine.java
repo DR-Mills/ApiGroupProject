@@ -1,9 +1,14 @@
 package ApiGroupProject.FoodApi;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@Document("food")
 public class Wine {
 
+	@Id
 	@JsonProperty("id")
 	private int id;
 	
@@ -21,6 +26,19 @@ public class Wine {
 	
 	@JsonProperty("price")
 	private String price;
+	
+	
+
+	public Wine() {
+	}
+
+	public Wine(int id, String title, double averageRating, String description, String price) {
+		this.id = id;
+		this.title = title;
+		this.averageRating = averageRating;
+		this.description = description;
+		this.price = price;
+	}
 
 	public int getId() {
 		return id;
