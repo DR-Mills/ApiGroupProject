@@ -6,52 +6,74 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+	crossorigin="anonymous">
 <title>Wine Search App - Home</title>
 </head>
 <body>
 	<header>
 		<h1>Website Name/Logo</h1>
 	</header>
-	<div id="searches">
-	<form action="/searchResults">
-		<label for="wineSearch">Search by Popular Wines (results = types of food...
-			meat "pairings")</label> 
-			<select id="wineSearch" name="wineSearch">
-			<option value="pinot_grigio">Dry White - Pinot Grigio</option>
-			<option value="chardonnay">Dry White - Chardonnay</option>
-			<option value="sauvignon_blanc">Dry White - Sauvignon Blanc</option>
-			<option value="riesling">White - Riesling</option>
-			<option value="gewurztraminer">White - Gewurztraminer</option>
-			<option value="pinot_noir">Dry Red - Pinot Noir</option>
-			<option value="red_burgundy">Dry Red - Red Burgundy</option>
-			<option value="cabernet_sauvignon">Dry Red - Cabernet Sauvignon</option>
-			<option value="port">Red - Port</option>
-			<option value="pinotage">Red - Pinotage</option>
-			<option value="sparkling_rose">Rose - Sparkling Rose</option>
-		</select>
-		<input type="submit" value="Search"/>
-		</form>
-		<br>
-		
-		<form action="/wineResults">
-		<label for="wineSearch">Search by Popular Food (results = types of wine..."pairedWines")</label> 
-			<select id="foodSearch" name="foodSearch">
-			<option value="steak">Steak</option>
-			<option value="chicken">Chicken</option>
-			<option value="pork">Pork</option>
-			<option value="tuna">Tuna - Fresh Loin</option>
-			<option value="shrimp">Shrimp</option>
-			<option value="chocolate">Chocolate</option>
-			<option value="gorgonzola">Bleu Cheese - Gorgonzola</option>
-			<option value="brie">Brie Cheese</option>
-			<option value="fruit">Fresh Fruit</option>
-			<option value="pizza">Pizza</option>
-			<option value="barbecue">Barbecue</option>
-		</select>
-		<input type="submit" value="Search" />
-		</form>
-		<br>
-		
+
+	<%-- msg div is for errors / testing / and displaying messages to the user without javascript --%>
+	<c:if test="${ msg != null }">
+		<div class="msg"><c:out value="${ msg }"></c:out></div>
+	</c:if>
+
+	<%-- search area --%>
+	<div class="container">
+		<%-- food pairing search --%>
+		<div class="food-pairing">
+			<form action="/foodResults" method="post">
+				<div class="row">
+					<h3>Find Food Pairings</h3>
+					<div class="col-md-6">
+						<select class="form-control" id="wineSearch" name="wine">
+							<option value="" disabled selected hidden>Select a Wine</option>
+							<c:forEach items="${ wineList }" var="wine">
+								<option value="${ wine.wineCode }">${ wine.wineName }</option>
+							</c:forEach>
+						</select>
+					</div>
+					<div class="col-md-2">
+						<input type="submit" value="Search" />
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<%-- wine pairing search --%>
+		<div class="wine-pairing">
+			<form action="/wineResults" method="post">
+				<div class="row">
+					<h3>Find Wine Pairings</h3>
+					<div class="col-md-6">
+						<select class="form-control" id="wineSearch" name="food">
+							<option value="" disabled selected hidden>Select Popular Foods, Ingredients, or Cuisines</option>
+							<option value="steak">Steak</option>
+							<option value="chicken">Chicken</option>
+							<option value="pork">Pork</option>
+							<option value="tuna">Tuna</option>
+							<option value="shrimp">Shrimp</option>
+							<option value="chocolate">Chocolate</option>
+							<option value="gorgonzola">Bleu Cheese - Gorgonzola</option>
+							<option value="brie">Brie Cheese</option>
+							<option value="fruit">Fresh Fruit</option>
+							<option value="pizza">Pizza</option>
+							<option value="barbecue">Barbecue</option>
+							<option value="pasta">Pasta</option>
+							<option value="italian">Italian</option>
+						</select>
+					</div>
+					<div class="col-md-2">
+						<input type="submit" value="Search" />
+					</div>
+				</div>
+			</form>
+		</div>
 	</div>
 
 	<div id="favorites"></div>

@@ -14,9 +14,13 @@
 		<h1>Website Name/Logo</h1>
 	</header>
 
+	<%-- msg div is for errors / testing / and displaying messages to the user without javascript --%>
+	<c:if test="${ msg != null }">
+		<div class="msg"><c:out value="${ msg }"></c:out></div>
+	</c:if>
 
 	<%-- Results for DishPairings --%>
-	Dish Pairing API Call Here (if active):
+	Dish Pairings:
 	<br>
 	<c:forEach var="food" items="${dishList }">
 				${food}
