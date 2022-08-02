@@ -17,16 +17,16 @@
 		<label for="wineSearch">Search by Popular Wines (results = types of food...
 			meat "pairings")</label> 
 			<select id="wineSearch" name="wineSearch">
-			<option value="pinot_blanc">Dry White - Pinot Blanc NOPE</option>
+			<option value="pinot_grigio">Dry White - Pinot Grigio</option>
 			<option value="chardonnay">Dry White - Chardonnay</option>
 			<option value="sauvignon_blanc">Dry White - Sauvignon Blanc</option>
-			<option value="grechetto">White - Grechetto NOPE</option>
-			<option value="semillon">White - Semillon NOPE</option>
+			<option value="riesling">White - Riesling</option>
+			<option value="gewurztraminer">White - Gewurztraminer</option>
 			<option value="pinot_noir">Dry Red - Pinot Noir</option>
 			<option value="red_burgundy">Dry Red - Red Burgundy</option>
 			<option value="cabernet_sauvignon">Dry Red - Cabernet Sauvignon</option>
-			<option value="marsala">Red - Marsala NOPE</option>
-			<option value="concord_wine">Red - Concord NOPE</option>
+			<option value="port">Red - Port</option>
+			<option value="pinotage">Red - Pinotage</option>
 			<option value="sparkling_rose">Rose - Sparkling Rose</option>
 		</select>
 		<input type="submit" value="Search"/>
