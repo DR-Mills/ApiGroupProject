@@ -30,5 +30,11 @@ Wines:<br>
 </c:forEach>
 Text: ${ winePerDish.pairingText }<br>
 
+<%-- List of Wines that Return DishPairings --%>
+<h3>List of Wines that Return DishPairings</h3>
+${ mapList }
+
+
+
 </body>
 </html>
