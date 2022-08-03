@@ -7,15 +7,35 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Search Results</title>
+<style>
+* {
+	-webkit-font-smoothing: antialiased;
+	font-family: Helvetica Neue, Helvetica, Ariel, Sans-Serif;
+	text-align: center;
+	}
+	h1 {
+	color: black;
+	text-align: center;
+	}
+	body {
+	background-color: #E0B0FF;
+	font-size: 24px;
+	}
+</style>
 </head>
 <body>
 <header>
-		<h1>Website Name/Logo</h1>
+		<h1>DNA Pairing</h1>
 	</header>
 
 	<%-- Results for WinePairings --%>
 
+
 	<br> Wines (click item to see recommendations):
+
+	Great choice! Here are some wines that will pair well with your meal:
+	<br> Wines:
+
 	<br><br>
 	
 	<c:forEach items="${ wineList.pairedWines }" var="wine">

@@ -7,11 +7,26 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Search Results</title>
+<style>
+* {
+	-webkit-font-smoothing: antialiased;
+	font-family: Helvetica Neue, Helvetica, Ariel, Sans-Serif;
+	text-align: center;
+	}
+	h1 {
+	color: black;
+	text-align: center;
+	}
+	body {
+	background-color: #E0B0FF;
+	font-size: 24px;
+	}
+</style>
 </head>
 <body>
 
 	<header>
-		<h1>Website Name/Logo</h1>
+		<h1>DNA Pairing</h1>
 	</header>
 
 	<%-- msg div is for errors / testing / and displaying messages to the user without javascript --%>
@@ -20,7 +35,11 @@
 	</c:if>
 
 	<%-- Results for DishPairings --%>
+
 	Dish Pairings:
+
+	A variety of dishes will work with this wine, including:
+
 	<br>
 	<c:forEach var="food" items="${dishList }">
 				${food}
