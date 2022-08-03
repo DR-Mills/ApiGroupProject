@@ -7,21 +7,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Search Results</title>
-<style>
-* {
-	-webkit-font-smoothing: antialiased;
-	font-family: Helvetica Neue, Helvetica, Ariel, Sans-Serif;
-	text-align: center;
-	}
-	h1 {
-	color: black;
-	text-align: center;
-	}
-	body {
-	background-color: #E0B0FF;
-	font-size: 24px;
-	}
-</style>
 </head>
 <body>
 

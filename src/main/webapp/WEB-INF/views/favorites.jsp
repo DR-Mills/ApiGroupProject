@@ -17,7 +17,7 @@
 </head>
 <body>
 	<header>
-		<h1>Website Name/Logo</h1>
+		<h1>WDNA Pairing</h1>
 	</header>
 
 	<%-- msg div is for errors / testing / and displaying messages to the user without javascript --%>

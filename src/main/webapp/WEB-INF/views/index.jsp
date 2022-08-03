@@ -12,39 +12,7 @@
 	integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
 	crossorigin="anonymous">
 <title>Wine Search App - Home</title>
-<style>
-	* {
-	-webkit-font-smoothing: antialiased;
-	font-family: Helvetica Neue, Helvetica, Ariel, Sans-Serif;
-	}
-	h1 {
-	color: black;
-	text-align: center;
-	}
-	body {
-	background-color: #E0B0FF;
-	}
-	form {
-	background-color: transparent;
-	border: none;
-	color: black;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: incline-block;
-	font-size: 24px;
-	}
-	input {
-	background: transparent;
-	float: right;
-	padding: 14px 0;
-	margin-right: 25px;
-	width: 220px;
-	}
-	select{
-	background-color: gray;
-	}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<header>
@@ -108,7 +76,8 @@
 			</form>
 		</div>
 	</div>
-
 	<div id="favorites"></div>
+	<img src="img_Grape.jpeg">
+	<img src="img_Food.jpeg">
 </body>
 </html>
