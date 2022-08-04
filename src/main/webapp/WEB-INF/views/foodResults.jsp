@@ -7,6 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Search Results</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -26,9 +27,11 @@
 	A variety of dishes will work with this wine, including:
 
 	<br>
+	<ul class="ul">
 	<c:forEach var="food" items="${dishList }">
-				${food}
+				<li>${food}</li>
 </c:forEach>
+</ul>
 	<br>
 
 </body>

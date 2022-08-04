@@ -38,10 +38,10 @@ public class HomeController {
 
 	
 	@RequestMapping("/foodResults")
-	public String showFoodResults(Model model, @RequestParam String wineType) {
+	public String showFoodResults(Model model, @RequestParam String wine) {
 
 		try {
-			List<String> dishList = wineApiService.getDishPairingForWine(wineType);
+			List<String> dishList = wineApiService.getDishPairingForWine(wine);
 			model.addAttribute("dishList", dishList);
 
 		} catch (HttpClientErrorException e) {
@@ -87,9 +87,21 @@ public class HomeController {
 		Wine newWine = new Wine(id, title, averageRating, description, price);
 
 		repo.save(newWine);
+		List<Wine> favoriteList = repo.findAll();
+		model.addAttribute("favorite", favoriteList);
 		model.addAttribute("msg", title + " successfully added to your favorites");
 
 		return "favorites";
 	}
-	
+	@RequestMapping("/favorites")
+	public String displayFavorites(Model model) {
+		List<Wine> favoriteList = repo.findAll();
+		model.addAttribute("favorite", favoriteList);
+		return "favorites";
+	}
+	@RequestMapping("/deleteFavorite")
+	public String deleteFavorites(@RequestParam int id) {
+		repo.deleteById(id);
+		return "redirect:favorites";
+	}
 }

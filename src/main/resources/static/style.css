@@ -24,10 +24,6 @@ body {
 	text-align: center;
 }
 
-h1 {
-	color: black;
-	text-align: center;
-}
 
 form {
 	background-color: transparent;
@@ -74,4 +70,16 @@ input {
 	width: fit-content;
 	word-break: break-word;
 	border: 0;
+}
+#headerWine {
+  height: 500px;
+  width: 100%;
+  background-image: url('img/Food.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.ul{
+	list-style-type: none;
+	
 }

@@ -16,9 +16,9 @@
 </head>
 <body>
 	<header>
-		<h1>DNA Pairing</h1>
+	<img src="img/Food.jpeg" id="headerWine">
 	</header>
-
+	<h1>DNA Pairing</h1>
 	<%-- msg div is for errors / testing / and displaying messages to the user without javascript --%>
 	<c:if test="${ msg != null }">
 		<div class="msg"><c:out value="${ msg }"></c:out></div>
@@ -32,7 +32,7 @@
 				<div class="row">
 					<h3>Find Food Pairings</h3>
 					<div class="col-md-6">
-						<select class="form-control" id="wineSearch" name="wine">
+						<select required class="form-control" id="wineSearch" name="wine">
 							<option value="" disabled selected hidden>Select a Wine</option>
 							<c:forEach items="${ wineList }" var="wine">
 								<option value="${ wine.wineCode }">${ wine.wineName }</option>
@@ -52,7 +52,7 @@
 				<div class="row">
 					<h3>Find Wine Pairings</h3>
 					<div class="col-md-6">
-						<select class="form-control" id="wineSearch" name="food">
+						<select required class="form-control" id="wineSearch" name="food">
 							<option value="" disabled selected hidden>Select Popular Foods, Ingredients, or Cuisines</option>
 							<option value="steak">Steak</option>
 							<option value="chicken">Chicken</option>
@@ -76,8 +76,11 @@
 			</form>
 		</div>
 	</div>
-	<div id="favorites"></div>
-	<img src="img_Grape.jpeg">
-	<img src="img_Food.jpeg">
+	<div id="favorites">
+	<a href="/favorites">
+	Click here to view your favorite wines!
+	</a>
+	</div>
+	<img src="img/Grape.jpeg">
 </body>
 </html>
