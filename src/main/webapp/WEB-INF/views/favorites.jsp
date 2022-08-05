@@ -56,9 +56,11 @@
 	</table>
 	</div>
 
-<a href="/">
-Click here to go home
-</a>
+<div id="favorites">
+		<a
+				class="button-7" href="/">Back to Home Page</a>
+		
+	</div>
 
 </body>
 </html>

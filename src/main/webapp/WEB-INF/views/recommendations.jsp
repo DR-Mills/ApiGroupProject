@@ -41,6 +41,14 @@ Recommendations:
 </c:forEach>
 
 </div>
+<br>
+
+<div id="favorites" class="giveMeSomeSpace">
+		<div class="text-center">
+			<a class="button-6" href="/favorites">See Favorite List</a>&nbsp; &nbsp;<a
+				class="button-7" href="/">Back to Home Page</a>
+		</div>
+	</div>
 
 </body>
 </html>

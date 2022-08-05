@@ -77,10 +77,11 @@
 		</div>
 	</div>
 	<div id="favorites">
-	<a href="/favorites">
-	Click here to view your favorite wines!
-	</a>
+		<div class="text-center">
+			<a class="button-6" href="/favorites">See Favorite List</a>
+		</div>
 	</div>
+	<br>
 	<img src="img/Grape.jpeg">
 </body>
 </html>

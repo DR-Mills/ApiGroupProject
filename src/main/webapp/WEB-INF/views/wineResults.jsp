@@ -7,6 +7,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Search Results</title>
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+	crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,6 +36,13 @@
 	<br>
 	${ wineList.pairingText }
 	<br>
+	<br>
+	<div id="favorites">
+		<div class="text-center">
+			<a class="button-6" href="/favorites">See Favorite List</a>&nbsp; &nbsp; <a
+				class="button-7" href="/">Back to Home Page</a>
+		</div>
+	</div>
 	
 
 </body>
